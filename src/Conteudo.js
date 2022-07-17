@@ -1,7 +1,9 @@
 import RenderizaIcons from './RenderizaIcons'
+import RenderizaLike from './RenderizaLike'
 import Sugestoes from './Sugestoes';
 
 const SugestoesObj = [{nome: "bad.vibes.memes", razao: "Segue você", img: "assets/img/bad.vibes.memes"}];
+
 
 function Conteudo() { //fica aqui enquanto eu vou componentizando
     return (
@@ -126,7 +128,7 @@ function Conteudo() { //fica aqui enquanto eu vou componentizando
 
               <div class="fundo">
                 <div class="acoes">
-                  <RenderizaIcons class = "" icons = {["heart-outline","chatbubble-outline","paper-plane-outline"]}/>
+                  <RenderizaLike class = "" like = "heart-outline" icons = {["chatbubble-outline","paper-plane-outline"]}/>
                   <RenderizaIcons class = "" icons = {["bookmark-outline"]}/>
                 </div>
 

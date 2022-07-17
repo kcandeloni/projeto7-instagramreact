@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import Conteudo from './Conteudo'
+import Conteudo from './Conteudo';
 
 function App() {
     return (
