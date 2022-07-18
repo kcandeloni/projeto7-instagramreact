@@ -2,10 +2,12 @@ import React from "react";
 import RenderizaIcons from './RenderizaIcons';
 
 function Posts () {
+  const listaPost = [{nomeUsuario: "meowed", imagemPost: "gato-telefone", curtidasUsuario: "respondeai", quantCurtida: "101.523" },
+  {nomeUsuario: "barked", imagemPost: "dog", curtidasUsuario: "adorable_animals", quantCurtida: "99.159"}];
+
     return(
         <div class="posts">
-            <Post dados={[{nomeUsuario: "meowed", imagemPost: "gato-telefone", curtidasUsuario: "respondeai", quantCurtida: "101.523" },
-        {nomeUsuario: "barked", imagemPost: "dog", curtidasUsuario: "adorable_animals", quantCurtida: "99.159"}]}/>
+            {listaPost.map(post => <Post nomeUsuario={post.nomeUsuario} imagemPost={post.imagemPost} curtidasUsuario={post.curtidasUsuario} quantCurtida={post.quantCurtida}/>)}
         </div>
     );
 }
@@ -18,18 +20,17 @@ function Post (props) {
     }
 
     return(
-        props.dados.map((post) =>
         <div class="post">
               <div class="topo">
                 <div class="usuario">
-                  <img src={"assets/img/"+post.nomeUsuario+".svg"} />
-                  {post.nomeUsuario}
+                  <img src={"assets/img/"+props.nomeUsuario+".svg"} />
+                  {props.nomeUsuario}
                 </div>
                 <RenderizaIcons class = "acoes" icons = {["ellipsis-horizontal"]}/>
               </div>
 
               <div class="conteudo">
-                <img onClick={() => setCorBotao("corLike")} src={"assets/img/"+post.imagemPost+".svg"} />
+                <img onClick={() => setCorBotao("corLike")} src={"assets/img/"+props.imagemPost+".svg"} />
               </div>
 
               <div class="fundo">
@@ -44,13 +45,13 @@ function Post (props) {
                 </div>
 
                 <div class="curtidas">
-                  <img src={"assets/img/"+post.curtidasUsuario+".svg"} />
+                  <img src={"assets/img/"+props.curtidasUsuario+".svg"} />
                   <div class="texto">
-                    Curtido por <strong>{post.curtidasUsuario}</strong> e <strong>outras {post.quantCurtida} pessoas</strong>
+                    Curtido por <strong>{props.curtidasUsuario}</strong> e <strong>outras {props.quantCurtida} pessoas</strong>
                   </div>
                 </div>
               </div>
-            </div>)
+            </div>
     );
 }
 
