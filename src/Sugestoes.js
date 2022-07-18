@@ -1,17 +1,22 @@
-
 function Sugestoes (props){
     return(
-        <div class="sugestao">
+      <div class="sugestoes">
+            <div class="titulo">
+              Sugestões para você
+              <div>Ver tudo</div>
+            </div>
+            {props.dados.map((sugestao) => <div class="sugestao">
               <div class="usuario">
-                <img src={props.img} />
+                <img src={sugestao.img}/>
                 <div class="texto">
-                  <div class="nome">{props.nome}</div>
-                  <div class="razao">{props.razao}</div>
+                  <div class="nome">{sugestao.nome}</div>
+                  <div class="razao">{sugestao.razao}</div>
                 </div>
               </div>
 
               <div class="seguir">Seguir</div>
-        </div>
+      </div>)}
+      </div>
     );
 }
 

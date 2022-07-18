@@ -182,6 +182,7 @@ body {
 
 .post .conteudo img {
   width: 100%;
+  cursor: pointer;
 }
 
 .post .fundo .acoes {
@@ -311,11 +312,7 @@ body {
 }
 
 .corLike {
-  color: red;
-}
-
-.corDeslike {
-  color: black;
+  color: #ed4956;
 }
 
 @media (max-width: 935px) {
